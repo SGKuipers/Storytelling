@@ -1,6 +1,6 @@
 ## Step 1 First import Data_9 file in Rstudio via the Import Excel 
 
-## Step 2 Create categorial variables for the Suppliers and the Delivery Windows.
+## Step 2 Create categorical variables for the Suppliers and the Delivery Windows.
 
 Suppliers<- factor(data_9$Supplier,c("Mono Packaging Materials","Trio PET PLC", "Miami Oranges","NO8DO Mango","Seitan Vitamins"),labels = c("Mono Packaging Materials","Trio PET PLC", "Miami Oranges","NO8DO Mango","Seitan Vitamins"))
 Deliverywindow<-factor(data_9$`Delivery window`,c("4 uur", "1 dag", "2 dagen", "1 week"),labels = c("4 uur", "1 dag", "2 dagen", "1 week"))

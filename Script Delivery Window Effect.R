@@ -1,10 +1,12 @@
-## Step 1 First import Data_9 file in Rstudio via the Import Excel 
+## Step 1 First import Data_9 file in Rstudio via the Import Excel and load library ggplot2 + tideverse
+library(ggplot2)
 
 ## Step 2 Create categorical variables for the Suppliers and the Delivery Windows.
-Companies <- c(unique(data_10$Supplier))
+Companies <- c(unique(data_9$Supplier))
 Delwin <- c(unique(data_9$`Delivery window`))
 Suppliers<- factor(data_9$Supplier,c(Companies),labels = c(Companies))
 Deliverywindow<-factor(data_9$`Delivery window`,c(Delwin),labels = c(Delwin))
+Contractindex1<-1
 
 
 ## Step 3 Plot the linegraph in the console.
@@ -19,3 +21,8 @@ ggplot(data_9, aes(x=Deliverywindow, y= `Contract index`, colour=Suppliers, grou
         plot.subtitle = element_text(color = "black", face = "italic", size = 18), ## subtitle
         axis.title.x = element_text(color = "black", size = 18), ##bigger x axis title
         axis.title.y = element_text(color = "black", size = 18)) ##bigger y axis title
+
+##vragen: Hoe krijgen we gelijke kleuren in beide plots.
+
+
+

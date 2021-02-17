@@ -1,8 +1,11 @@
-library(ggplot2)
+## Step 1 First import Data_10 file in Rstudio via the Import Excel 
 
+## Step 2 Create categorical variables for the Suppliers and the Delivery Windows.
 Contractindex1 <- 1
 Companies <- c(unique(data_10$Supplier))
 Suppliers2 <-factor(data_10$Supplier,c(Companies),labels = c(Companies))
+DeliveryReliability <- factor(data_10$`Delivery Reliabilty`, c("0.90", "0.92", "0.94", "0.96", "0.98"), labels = c("90%", "92%", "94%", "96%", "98%"))
+
 
 ## Delivery Reliability X Contract Index Plot
 
@@ -12,8 +15,13 @@ ggplot(data_10, aes(x=`Delivery Reliabilty`, y= `Contract Index`, colour=Supplie
   geom_line(aes(y=Contractindex1), color= "black", size=0.8, linetype = "dashed")+ ##additional dashed line
   xlab("Delivery Reliability")+
   ylab("Contract Index")+
-  ggtitle(label = "Delivery Reliability Effect", subtitle = "Effect of Changes in Delivery reliability on the Contract Index")+
+  
+  ggtitle(label = "Delivery Reliability Effect", subtitle = "Effect of Changes in Delivery reliability on the Contract Index based on 1 day deliverywindow")+
   theme(plot.title = element_text(color = "red", face = "bold", size = 32), ##themefunction can be used to create specific thematic changes to the used data.
-        plot.subtitle = element_text(color = "black", face = "italic", size = 18), ## subtitle
+        plot.subtitle = element_text(color = "black", face = "italic", size = 14), ## subtitle
         axis.title.x = element_text(color = "black", size = 18), ##bigger x axis title
-        axis.title.y = element_text(color = "black", size = 18)) ##bigger y axis title
+        axis.title.y = element_text(color = "black", size = 18))#bigger y axis title
+
+
+##vragen: Hoe krijgen we gelijke kleuren in beide plots.
+

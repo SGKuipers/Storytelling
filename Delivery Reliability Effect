@@ -1,0 +1,19 @@
+library(ggplot2)
+
+Contractindex1 <- 1
+
+Suppliers2 <-factor(data_10$Supplier,c("Mono Packaging Materials","Trio PET PLC", "Miami Oranges","NO8DO Mango","Seitan Vitamins"),labels = c("Mono Packaging Materials","Trio PET PLC", "Miami Oranges","NO8DO Mango","Seitan Vitamins"))
+
+## Delivery Reliability X Contract Index Plot
+
+ggplot(data_10, aes(x=`Delivery Reliabilty`, y= `Contract Index`, colour=Supplier, group=Supplier, fill=Supplier))+
+  geom_line(size=1.5)+
+  geom_point(size=5, shape=21, colour="black", stroke=1.5)+
+  geom_line(aes(y=Contractindex1), color= "black", size=0.8, linetype = "dashed")+ ##additional dashed line
+  xlab("Delivery Reliability")+
+  ylab("Contract Index")+
+  ggtitle(label = "Delivery Reliability Effect", subtitle = "Effect of Changes in Delivery reliability on the Contract Index")+
+  theme(plot.title = element_text(color = "red", face = "bold", size = 32), ##themefunction can be used to create specific thematic changes to the used data.
+        plot.subtitle = element_text(color = "black", face = "italic", size = 18), ## subtitle
+        axis.title.x = element_text(color = "black", size = 18), ##bigger x axis title
+        axis.title.y = element_text(color = "black", size = 18)) ##bigger y axis title

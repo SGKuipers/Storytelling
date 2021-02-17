@@ -1,8 +1,8 @@
 library(ggplot2)
 
 Contractindex1 <- 1
-
-Suppliers2 <-factor(data_10$Supplier,c("Mono Packaging Materials","Trio PET PLC", "Miami Oranges","NO8DO Mango","Seitan Vitamins"),labels = c("Mono Packaging Materials","Trio PET PLC", "Miami Oranges","NO8DO Mango","Seitan Vitamins"))
+Companies <- c(unique(data_10$Supplier))
+Suppliers2 <-factor(data_10$Supplier,c(Companies),labels = c(Companies))
 
 ## Delivery Reliability X Contract Index Plot
 

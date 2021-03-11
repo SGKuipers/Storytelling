@@ -8,7 +8,7 @@ library(dplyr)
 Revenue2 <- aangepast_overzicht 
 Revenue2$z <- round((Revenue2$z*100),0)
 
-ggplot(Revenue2, aes(fill=group, label=paste0(Revenue2$z, "%"), y=y, x=x)) +  
+ggplot(Revenue2, aes(fill=group, label=(paste0(Revenue2$z, "%")), y=y, x=x)) +  
   
   geom_bar(position="stack", stat="identity") + 
   
@@ -22,3 +22,7 @@ ggplot(Revenue2, aes(fill=group, label=paste0(Revenue2$z, "%"), y=y, x=x)) +
   
   xlab("Customers") +
   ylab("Revenue in euro's")
+
+
+
+
